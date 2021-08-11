@@ -1,0 +1,60 @@
+*PROJECT FOR URL SHORTENER SERVICE.*
+
+step1:- Download and Install Python on your server/pc (here we use Python 3.9.6 )
+
+step2:- Create and activate your python virtual environment.
+
+step3:- Install all required python package using one single command on your terminal/powershell/cmd/putty
+
+		pip install -r requirments.txt
+
+step4:- Create Database here we use postgreSQL.
+
+step5:- After created database we need to migrations and migrate table according to project.
+
+	migrations :- python manage.py makemigrations
+	migrate    :- python manage.py migrate
+
+step6:- Create superuser/admin
+	
+	create super user :- python manage.py createsuperuser
+
+and follow some step like username, email, password
+
+step7:- Run project
+
+	run      :- python manage.py runserver
+
+
+-------------------------------------------------------------
+*API DETAIL FOR URL SHORTENER SERVICE PROJECT.*
+
+here we have two api one for convert long url into a short url and second for get main url using given short url.
+
+API FOR CONVERT LONG URL INTO SHORT URL
+
+url:- http://127.0.0.1:8000/   (This is localhost url)
+method:-  Post
+parameter:- {
+				"url":"http://127.0.0.1:8000/admin/shortener_api/urldetail/1/change/"
+			}
+
+response:- {
+    			"detail": "Get Short URL.",
+    			"status": 1,
+    			"sort_url": "http://127.0.0.1:8000/XSkhFS"
+			}
+
+
+API FOR GET LONG URL FROM SHORT URL
+
+url:- http://127.0.0.1:8000/XSkhFS   (This is converted short url)
+method:-  Get
+
+response:- {
+    			"detail": "Get Main URL.",
+    			"status": 1,
+    			"main_url": "http://127.0.0.1:8000/admin/shortener_api/urldetail/1/change/"
+			}
+			
+-------------------------------------------------------------
